@@ -1,0 +1,52 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - 'liminal-v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Install toolchain
+        run: npm install -g npm@11 pnpm@11.15.1
+
+      - name: Build
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+          pnpm check:pack
+
+      - name: Pack
+        run: |
+          mkdir -p "$RUNNER_TEMP/pack"
+          for dir in packages/*/; do
+            (cd "$dir" && pnpm pack --pack-destination "$RUNNER_TEMP/pack")
+          done
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/pack"
+          for tgz in liminal-lv-core-*.tgz $(ls liminal-lv-*.tgz | grep -v '^liminal-lv-core-'); do
+            spec=$(tar -xOzf "$tgz" package/package.json | node -pe 'const p = JSON.parse(require("fs").readFileSync(0)); p.name + "@" + p.version')
+            if npm view "$spec" version >/dev/null 2>&1; then
+              echo "$spec already on npm, skipping"
+            else
+              npm publish "$tgz" --access public --provenance
+            fi
+          done

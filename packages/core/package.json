@@ -1,0 +1,43 @@
+{
+  "name": "@liminal-lv/core",
+  "version": "0.9.1",
+  "description": "Read Liminal Editor .lm levels and describe entities for its Blender addon. Engine-agnostic, zero dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./glb-write": {
+      "types": "./dist/glb/write.d.ts",
+      "default": "./dist/glb/write.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
+  },
+  "keywords": [
+    "liminal",
+    "blender",
+    "gltf",
+    "level-editor",
+    "glb",
+    "level-design"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^7.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@liminal-lv/cli",
+  "version": "0.9.1",
+  "description": "Write the Blender workspace Liminal Editor reads: entities.json, preview models, and the material library.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./bin": {
+      "types": "./dist/bin.d.ts",
+      "default": "./dist/bin.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
+  },
+  "keywords": [
+    "liminal",
+    "blender",
+    "level-editor",
+    "codegen",
+    "gamedev"
+  ],
+  "dependencies": {
+    "@liminal-lv/core": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^7.0.2"
+  },
+  "bin": {
+    "liminal": "./dist/bin.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

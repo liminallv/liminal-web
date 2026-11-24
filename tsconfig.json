@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/collision-2d" },
+    { "path": "./packages/collision-3d" },
+    { "path": "./packages/three" },
+    { "path": "./packages/cli" }
+  ]
+}

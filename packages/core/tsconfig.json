@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    // Zero-dependency and host-neutral, enforced rather than promised: with no ambient
+    // `@types/*` and no `lib.dom`, a stray `window`, `document`, `Buffer` or `process`
+    // fails to compile instead of failing at runtime on the other host. `src/env.d.ts`
+    // declares the one global this package genuinely uses.
+    "types": []
+  },
+  "include": ["src/**/*.ts"]
+}

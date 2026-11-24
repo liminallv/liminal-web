@@ -1,0 +1,4 @@
+VERSION 1
+90928840-39b2-558f-8a4d-b7db859604d9:floor:Floor
+4ea43e3b-866a-56d2-914d-8871f663bee0:glow:Glow
+4042e815-3a4c-545b-8994-ea124357c1e2:wall:Wall

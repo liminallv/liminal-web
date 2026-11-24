@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Alien Invasion</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%234ade80'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+    <div id="hud">
+      <div class="bars">
+        <div class="bar"><span class="label">HP</span><div class="track"><div id="hp" class="fill hp"></div></div></div>
+        <div class="bar"><span class="label">SHELLS</span><span id="shells" class="value">0</span></div>
+        <div class="bar"><span class="label">KILLS</span><span id="kills" class="value">0</span></div>
+      </div>
+      <div id="message"></div>
+      <div id="warnings"></div>
+      <div id="sticks">
+        <div id="stick-move" class="stick"><div class="knob"></div></div>
+        <div id="stick-aim" class="stick"><div class="knob"></div></div>
+      </div>
+      <div id="overlay" class="hidden">
+        <h1 id="overlay-title"></h1>
+        <p id="overlay-text"></p>
+        <button id="overlay-button">Restart</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

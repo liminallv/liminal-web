@@ -1,0 +1,25 @@
+{
+  "name": "liminal-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Liminal Editor SDK for the web — read .lm levels and write Blender workspaces from JavaScript",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.15.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "watch": "tsc -b --watch",
+    "clean": "tsc -b --clean",
+    "typecheck": "tsc -b && tsc -p tsconfig.tests.json && pnpm -r --filter \"./examples/*\" typecheck",
+    "test": "node --test \"packages/*/test/**/*.test.ts\"",
+    "check:pack": "node scripts/check-pack.mjs",
+    "check": "pnpm typecheck && pnpm test && pnpm check:pack"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^7.0.2"
+  }
+}

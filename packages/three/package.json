@@ -1,0 +1,45 @@
+{
+  "name": "@liminal-lv/three",
+  "version": "0.9.1",
+  "description": "Turn Liminal Editor level geometry into Three.js meshes and materials.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
+  },
+  "keywords": [
+    "liminal",
+    "three",
+    "threejs",
+    "gltf",
+    "level-editor"
+  ],
+  "dependencies": {
+    "@liminal-lv/core": "workspace:^"
+  },
+  "peerDependencies": {
+    "three": ">=0.160.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.185.1",
+    "three": "^0.185.1",
+    "typescript": "^7.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

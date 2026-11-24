@@ -1,0 +1,31 @@
+{
+  "name": "@liminal-lv/example-alien-invasion",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Top-down 2.5D shooter built on the Liminal Web SDK: Blender-authored mazes, signal wiring, Three.js.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/gen-icons.ts",
+    "sync": "liminal sync",
+    "verify": "liminal verify",
+    "wiring": "liminal wiring",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@liminal-lv/collision-2d": "workspace:^",
+    "@liminal-lv/core": "workspace:^",
+    "@liminal-lv/three": "workspace:^",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@liminal-lv/cli": "workspace:^",
+    "@types/node": "^22.20.1",
+    "@types/three": "^0.185.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
