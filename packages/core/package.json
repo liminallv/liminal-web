@@ -3,6 +3,11 @@
   "version": "0.9.1",
   "description": "Read Liminal Editor .lm levels and describe entities for its Blender addon. Engine-agnostic, zero dependencies.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liminallv/liminal-web.git",
+    "directory": "packages/core"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.js",
